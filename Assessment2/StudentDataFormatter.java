@@ -37,6 +37,10 @@ public class StudentDataFormatter {
                 if (line.startsWith("#") || line.isEmpty()) {
                     continue; // Skip processing this line and move to the next one
                 }
+                
+                 // this part will split the line into parts based on commas
+                String[] details = line.split(",");
+                
 
         
 
