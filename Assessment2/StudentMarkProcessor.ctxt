@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=StudentMarkProcessor
+comment1.params=name\ id\ a1\ a2\ a3
+comment1.target=StudentInfo(java.lang.String,\ int,\ double,\ double,\ double)
+comment2.params=
+comment2.target=double\ calculateTotal()
+comment3.params=
+comment3.target=java.lang.String\ toString()
+comment4.params=args
+comment4.target=void\ main(java.lang.String[])
+comment5.params=filename
+comment5.target=void\ readStudentData(java.lang.String)
+comment6.params=scoreStr
+comment6.target=double\ parseScore(java.lang.String)
+comment7.params=
+comment7.target=void\ displayStudentMarks()
+numComments=8
