@@ -59,13 +59,15 @@ public class StudentGrades {
                         String lastName = data[0].trim();
                         String firstName = data[1].trim();
                         int studentId = Integer.parseInt(data[2].trim());
-                        double a1 = Double.parseDouble(data[3].trim());
-                        double a2 = Double.parseDouble(data[4].trim());
-                        double a3 = Double.parseDouble(data[5].trim());
+                        double a1 = data[3].trim().isEmpty() ? 0 : Double.parseDouble(data[3].trim());
+                        double a2 = data[4].trim().isEmpty() ? 0 : Double.parseDouble(data[4].trim());
+                        double a3 = data[5].trim().isEmpty() ? 0 : Double.parseDouble(data[5].trim());
                         students.add(new Student(firstName, lastName, studentId, a1, a2, a3));
                     } catch (NumberFormatException e) {
                         System.err.println("Error parsing data: " + Arrays.toString(data));
                     }
+                } else {
+                    System.err.println("Incomplete data: " + Arrays.toString(data));
                 }
             }
         } catch (FileNotFoundException e) {
