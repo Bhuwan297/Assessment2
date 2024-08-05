@@ -32,6 +32,11 @@ public class StudentDataFormatter {
             // here we Read each line from the file using a while loop
             while (fileScanner.hasNextLine()) {
                 String line = fileScanner.nextLine().trim(); // Read the next line and trim whitespace
+                
+                 // before moving, we should check for comments or empty lines and skip them
+                if (line.startsWith("#") || line.isEmpty()) {
+                    continue; // Skip processing this line and move to the next one
+                }
 
         
 
