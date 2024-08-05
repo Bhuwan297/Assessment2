@@ -19,7 +19,7 @@ public class StudentDataFormatter {
         System.out.println("UNIT: Fundamentals of Programming");
         
         // this line is to Adjust all column widths to 30% cause the files are not in same length and same size
-        System.out.println(String.format("%-30s %-30s %-30s %-30s %-30s %-30s", "Student Last Name", "First Name", "Student ID", "A1", "A2", "A3"));
+        System.out.println(String.format("%-30s %-30s %-30s %-30s %-30s %-30s", "Student Last Name", "First Name", "Student ID", "A1", "A2", "A3", "Total Marks"));
         System.out.println("----------------------------------------------------------------------------------------------------");
 
         // Now we Attempt to open the file and process it
@@ -47,9 +47,13 @@ public class StudentDataFormatter {
                     String lastName = details[0];
                     String firstName = details[1];
                     String studentId = details[2];
-                    String a1 = details[3];
-                    String a2 = details[4];
-                    String a3 = details[5];
+                    int a1 = Integer.parseInt(details[3]);
+                    int a2 = Integer.parseInt(details[4]);
+                    int a3 = Integer.parseInt(details[5]);
+                    
+                    
+                    // Calculate the total marks
+                    int totalMarks = a1 + a2 + a3;
                     
                 // this part is for Formatting and printing each student's data under the respective headers
                     System.out.format("%-30s %-30s %-30s %-30s %-30s %-30s\n", lastName, firstName, studentId, a1, a2, a3);
