@@ -53,6 +53,9 @@ public class StudentMarkProcessor {
 
         // Add call to filter by threshold
         ThresholdProcessor.filterAndPrintByThreshold(consoleInput, studentList); // Call function to filter by threshold
+
+        // Call to sort and print top 5 and bottom 5 students
+        TopBottomProcessor.printTopBottomStudents(studentList); // Call function to print top and bottom students
     }
 
     // Method to read student data from file
@@ -135,3 +138,32 @@ class ThresholdProcessor {
         }
     }
 }
+
+// New class to handle sorting and printing top 5 and bottom 5 students
+class TopBottomProcessor {
+    // Method to sort and print top 5 and bottom 5 students
+    public static void printTopBottomStudents(List<StudentInfo> studentList) {
+        // List to store top 5 and bottom 5 students
+        List<StudentInfo> topStudents = new ArrayList<>();
+        List<StudentInfo> bottomStudents = new ArrayList<>();
+
+        // For each student in the list, insert into top and bottom lists
+        for (StudentInfo student : studentList) {
+            double total = student.calculateTotal(); // Calculate total marks
+
+            // Insert into topStudents list in descending order
+            insertInOrder(topStudents, student, true);
+            if (topStudents.size() > 5) {
+                topStudents.remove(topStudents.size() - 1); // Keep only top 5
+            }
+
+            // Insert into bottomStudents list in ascending order
+            insertInOrder(bottomStudents, student, false);
+            if (bottomStudents.size() > 5) {
+                bottomStudents.remove(bottomStudents.size() - 1); // Keep only bottom 5
+            }
+        }
+
+        // Print top 5 students
+        System.out.println("\nTop 5 Students:");
+        System.out.println(String.format("%-20s %-20s", "Student Name",
