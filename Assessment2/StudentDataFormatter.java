@@ -58,10 +58,19 @@ public class StudentDataFormatter {
                     System.out.println("Skipping malformed data line: " + line);
                 }
             }
+            
+             // and now we can Close the scanner after finishing reading the file
+            fileScanner.close();
+        } catch (FileNotFoundException e) {
+            //finally we  Handle the case where the file is not found by printing an error message
+            System.out.println("The specified file was not found. Please check the file name and try again.");
+        } finally {
+            // Closing the input scanner
+            inputScanner.close();
                 
                 
                 
-
+        }
         
 
 
