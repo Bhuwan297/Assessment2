@@ -1,7 +1,6 @@
-import java.util.*;  // Importing the Java utility package for using lists and scanners
-import java.io.File;  // Importing the Java File class for handling file operations
-import java.io.FileNotFoundException;  // Importing the exception class for handling file not found errors
-
+import java.util.*;  
+import java.io.File;  
+import java.io.FileNotFoundException;  
 public class StudentGrades {  // Defining the main class
     private static List<Student> students = new ArrayList<>();  // Creating a list to store student objects
 
