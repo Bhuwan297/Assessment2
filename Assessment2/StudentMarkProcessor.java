@@ -27,11 +27,6 @@ class StudentInfo {
         return studentName; // Return student's full name
     }
 
-    // Getter method for total marks
-    public double getTotalMarks() {
-        return calculateTotal(); // Return student's total marks
-    }
-
     // Override toString to format student information for display
     @Override
     public String toString() {
@@ -59,8 +54,10 @@ public class StudentMarkProcessor {
         // Add call to filter by threshold
         ThresholdProcessor.filterAndPrintByThreshold(consoleInput, studentList); // Call function to filter by threshold
         
-        // Add call to sort and print top 5 and bottom 5 students
-        MarksSorter.printTopBottomStudents(studentList); // Call function to print top and bottom students
+         // Add call to sort and print top 5 and bottom 5 students
+        MarksSorter.printTopBottomStudents(studentList); //Call function to print top and bottom students
+        
+        
     }
 
     // Method to read student data from file
@@ -143,12 +140,11 @@ class ThresholdProcessor {
         }
     }
 }
-
 // New class to handle sorting and printing top 5 and bottom 5 students
 class MarksSorter {
     // Method to sort and print top 5 and bottom 5 students
     public static void printTopBottomStudents(List<StudentInfo> studentList) {
-        // Sort the list of students by total marks
+        // Sort the list of students by total marks in descending order
         studentList.sort((s1, s2) -> Double.compare(s2.getTotalMarks(), s1.getTotalMarks())); // Sort in descending order
 
         // Print top 5 students
@@ -156,7 +152,7 @@ class MarksSorter {
         System.out.println(String.format("%-20s %-20s %-10s", "Student Name", "Total Marks", "Student ID")); // Print header
         for (int i = 0; i < Math.min(5, studentList.size()); i++) {
             StudentInfo student = studentList.get(i);
-            System.out.format("%-20s %-20.1f %-10d\n", student.getStudentName(), student.getTotalMarks(), student.studentId); // Print student details
+            System.out.format("%-20s %-20.1f %-10d\n", student.getStudentName(), student.getTotalMarks(), student.getStudentId()); // Print student details
         }
 
         // Print bottom 5 students
@@ -164,7 +160,8 @@ class MarksSorter {
         System.out.println(String.format("%-20s %-20s %-10s", "Student Name", "Total Marks", "Student ID")); // Print header
         for (int i = Math.max(0, studentList.size() - 5); i < studentList.size(); i++) {
             StudentInfo student = studentList.get(i);
-            System.out.format("%-20s %-20.1f %-10d\n", student.getStudentName(), student.getTotalMarks(), student.studentId); // Print student details
+            System.out.format("%-20s %-20.1f %-10d\n", student.getStudentName(), student.getTotalMarks(), student.getStudentId()); // Print student details
         }
     }
 }
+
