@@ -50,6 +50,14 @@ public class StudentDataFormatter {
                     String a1 = details[3];
                     String a2 = details[4];
                     String a3 = details[5];
+                    
+                // this part is for Formatting and printing each student's data under the respective headers
+                    System.out.format("%-30s %-30s %-30s %-30s %-30s %-30s\n", lastName, firstName, studentId, a1, a2, a3);
+                } else {
+                    // If the line does not contain exactly 6 pieces of data, it's considered malformed
+                    System.out.println("Skipping malformed data line: " + line);
+                }
+            }
                 
                 
                 
