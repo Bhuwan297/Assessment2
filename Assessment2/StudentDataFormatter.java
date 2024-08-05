@@ -28,6 +28,11 @@ public class StudentDataFormatter {
             File file = new File(fileName);
             // then we Open a scanner to read from the file
             Scanner fileScanner = new Scanner(file);
+            
+            // here we Read each line from the file using a while loop
+            while (fileScanner.hasNextLine()) {
+                String line = fileScanner.nextLine().trim(); // Read the next line and trim whitespace
+
         
 
 
