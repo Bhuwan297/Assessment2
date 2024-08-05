@@ -41,6 +41,18 @@ public class StudentDataFormatter {
                  // this part will split the line into parts based on commas
                 String[] details = line.split(",");
                 
+                // here we are Checking if the line has the correct amount of data
+                if (details.length == 6) { // There should be six pieces of data
+                    // Assigning each part of the line to variables for clarity
+                    String lastName = details[0];
+                    String firstName = details[1];
+                    String studentId = details[2];
+                    String a1 = details[3];
+                    String a2 = details[4];
+                    String a3 = details[5];
+                
+                
+                
 
         
 
